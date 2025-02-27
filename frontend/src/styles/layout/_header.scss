@@ -1,0 +1,32 @@
+@use '../abstracts/_variables' as *;
+@use '../abstracts/_mixins' as *;
+@use "sass:color";
+
+#header{
+  //border:1px solid #ff0000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+
+}
+
+.profileSide
+{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+   a > div{
+    background-color: $buttons-background-color; width: 36px; height: 36px;    border-radius: 50%; display: flex; justify-content: center; align-items: center;
+    svg{width: 20px; height: 20px; }
+  }
+
+
+  img{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+
+
+}

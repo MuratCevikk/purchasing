@@ -1,0 +1,22 @@
+
+@use '../abstracts/_variables' as *;
+@use '../abstracts/_mixins' as *;
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  .card-body {
+    font-size: 1rem;
+  }
+
+  @include respond(md) {
+    padding: 20px;
+  }
+}

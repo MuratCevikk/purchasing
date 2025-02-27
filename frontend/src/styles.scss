@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+//Abstracts
+@use 'styles/abstracts/_variables' as *;
+@use 'styles/abstracts/_mixins' as *;
+
+//Base
+@use 'styles/base/_reset' as *;
+@use 'styles/base/_typhography' as *;
+
+//Components
+@use 'styles/components/_buttons' as *;
+@use 'styles/components/_cards' as *;
+
+
+//Layout
+@use 'styles/layout/_header' as *;
+@use 'styles/layout/_footer' as *;
+@use 'styles/layout/_layout_grid' as *;
+@use 'styles/layout/_sidebar' as *;
+
+//Pages
+@use 'styles/pages/_home' as *;
+@use 'styles/pages/_about' as *;
+
+//Themes
+@use 'styles/themes/_dark' as *;
+@use 'styles/themes/_light' as *;
+
+//Vendors
+@use 'styles/vendors/_swiper' as *;
+

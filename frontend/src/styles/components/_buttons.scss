@@ -1,0 +1,24 @@
+@use '../abstracts/_variables' as *;
+@use '../abstracts/_mixins' as *;
+@use "sass:color";
+
+.button {
+  background-color: $primary-color;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width:100%;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: color.adjust($primary-color, $lightness: 20%);
+  }
+
+
+  @include respond(sm) {
+    padding: 12px 25px;
+    width:150px;
+  }
+}

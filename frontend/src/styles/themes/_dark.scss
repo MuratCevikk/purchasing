@@ -1,0 +1,11 @@
+@use '../abstracts/_variables' as *;
+@use '../abstracts/_mixins' as *;
+@use "sass:color";
+.dark-mode {
+  background: #212529;
+  color: white;
+
+  .button {
+    background: color.adjust($primary-color, $lightness: 20%);
+  }
+}

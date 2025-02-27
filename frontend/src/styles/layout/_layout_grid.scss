@@ -1,0 +1,36 @@
+@use '../abstracts/_variables' as *;
+@use '../abstracts/_mixins' as *;
+// Giriş yaptıktan sonra yönetici panelinin genel iskeletini oluşturma.
+
+.layout{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    " header"
+    " main"
+    " footer";
+  //div{  border:1px solid #ff0000;}
+
+  }
+
+
+  #sidebar { grid-area: sidebar;  }
+  #header { grid-area: header; }
+  #main { grid-area: main; }
+  #footer { grid-area: footer; }
+
+
+  @include respond(md) {
+
+    .layout {
+      display: grid;
+      grid-template-columns: 290px auto auto;
+      grid-template-rows: 80px;
+    // border:3px solid greenyellow;
+     grid-template-areas:
+      "sidebar header header"
+      "sidebar main main"
+      "sidebar footer footer";
+    }
+
+  }
