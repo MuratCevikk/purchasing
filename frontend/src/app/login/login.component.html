@@ -1,1 +1,37 @@
-<p>login works!</p>
+
+  <div class="login">
+    <div class="login__container">
+
+
+
+
+      <div class="login__content">
+        <form action=""  [formGroup]="loginForm"  (ngSubmit)="submit()" class="login__form">
+          <h2 class="login__title">Welcome </h2>
+          <div class="login__input">
+            <i class='bx bx-user'></i>
+            <input type="text" placeholder="Username" formControlName="username">
+          </div>
+          <div class="login__input">
+            <i class='bx bx-lock'></i>
+            <input type="password" placeholder="Password" formControlName="password">
+             @if(loginForm.controls['password'].touched && loginForm.controls['password'].invalid) {
+
+                @for (error of getPasswordErrors(); track $index) {
+                  <p style="color: rgb(212, 11, 11); margin-bottom:5px; padding-left: 14px;">{{ error }}</p>
+                }
+
+            }
+
+          </div>
+          <button type="submit" class="login__button">Login</button>
+        </form>
+      </div>
+
+      <div class="login__img">
+        <img src="https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif" alt="">
+      </div>
+
+    </div>
+  </div>
+

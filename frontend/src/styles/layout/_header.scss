@@ -3,11 +3,12 @@
 @use "sass:color";
 
 #header{
-  //border:1px solid #ff0000;
+  border:1px dotted $secondary-color;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 32px;
+  padding:  32px;
+
 
 }
 
