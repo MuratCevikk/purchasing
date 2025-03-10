@@ -10,8 +10,8 @@
 }
 
 // Flexbox merkezi hizalama
-@mixin flex-center {
+@mixin flex-end {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: end;
 }

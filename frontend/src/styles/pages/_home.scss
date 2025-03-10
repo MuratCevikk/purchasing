@@ -1,4 +1,121 @@
 @use '../abstracts/_variables' as *;
 @use '../abstracts/_mixins' as *;
 
-.homMainCon{ padding: 0 32px;  }
+.homMainCon{ padding: 0 12px; width:100% }
+
+
+.product-card_container{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    gap: 12px;
+    margin-top: 32px;
+
+}
+
+.product-card{
+  -webkit-box-shadow: 5px 6px 14px -9px rgba(0,0,0,0.5);
+  -moz-box-shadow: 5px 6px 14px -9px rgba(0,0,0,0.5);
+  box-shadow: 5px 6px 14px -9px rgba(0,0,0,0.5);
+  border-radius: 8px;
+  padding: 16px;
+  background-color: $component-background-color;
+
+.product-card__image{
+  background-color: white;
+  height: 330px;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
+}
+
+
+
+.skeleton-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 390px; /* Her satırın minimum yüksekliğini artırır */
+  gap: 12px;
+  margin-top: 32px;
+
+}
+
+.skeleton-card{  background: linear-gradient(90deg, #eee 25%, #ddd 50%, #eee 75%);border-radius: 8px;}
+
+.skeleton-card__image {
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(90deg, #eee 25%, #ddd 50%, #eee 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite linear;
+  border-radius: 8px;
+}
+
+.skeleton-card__title,
+.skeleton-card__price,
+.skeleton-card__button {
+  height: 20px;
+  background: linear-gradient(90deg, #eee 25%, #ddd 50%, #eee 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite linear;
+  border-radius: 5px;
+}
+
+
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+
+.sorting{ width:100%; padding:20px 2rem;
+@include flex-end; gap:1rem;
+  div{ @include flex-end;gap:1rem; cursor:pointer }
+}
+
+
+@include respond('sm'){
+  .homMainCon{ padding: 0 32px; width:100% }
+
+  .product-card_container{
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 32px;
+  }
+
+}
+
+
+@include respond('md'){
+  .homMainCon{ padding: 0 32px; width:100% }
+
+  .product-card_container{
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 32px;
+  }
+
+
+
+
+}
+
+
+@include respond('lg'){
+  .homMainCon{ padding: 0 32px; width:100% }
+
+  .product-card_container{
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 32px;
+  }
+
+}
+
+

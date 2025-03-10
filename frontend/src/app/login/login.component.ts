@@ -41,11 +41,7 @@ export class LoginComponent {
 
   // Hata mesajlarını döndüren fonksiyon
   getPasswordErrors(): string[] {
-    const errors = this.loginForm.get('password')?.errors?.['passwordInvalid'];
-    if (errors) {
-      return Object.keys(errors).map(key => errors[key]);
-    }
-    return [];
+    return this.loginForm.get('password')?.errors?.['passwordInvalid'] || [];
   }
 
 
@@ -53,7 +49,7 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       this.authService.logIN(this.loginForm.value).subscribe({
         next: (data) => {
-          console.log(data);
+          //console.log(data);
           localStorage.setItem('token', data.accessToken);
           this.router.navigate(['/home']);
 

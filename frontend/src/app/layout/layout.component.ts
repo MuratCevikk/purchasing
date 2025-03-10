@@ -11,14 +11,14 @@ import { AuthService } from '../services/auth.service';
 })
 export class LayoutComponent {
 
-  constructor( private authService: AuthService, private router: Router) { 
+  constructor( private authService: AuthService, private router: Router) {
 
     this.authService.authonticatedUser(localStorage.getItem('token')).subscribe({
       next: (data) => {
-        console.log(data);
+       console.log(data);
       },
       error: (error) => {
-        console.log("Dee" + JSON.stringify(error));
+       // console.log("Dee" + JSON.stringify(error));
       }
     });
 

@@ -1,8 +1,42 @@
-<div class="homMainCon" >
+<div class="sorting">
 
-             <div>
-qweq
-             </div>
+  <div>
+    <div (click)="byTitle()">Title </div>
+    <div (click)="byDesc()"> Description </div>
+  </div>
+
+  <div>
+    <div (click)="artan()"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-sort-ascending-letters"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 10v-5c0 -1.38 .62 -2 2 -2s2 .62 2 2v5m0 -3h-4" /><path d="M19 21h-4l4 -7h-4" /><path d="M4 15l3 3l3 -3" /><path d="M7 6v12" /></svg> </div>
+    <div (click)="azalan()"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-sort-descending-letters"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 21v-5c0 -1.38 .62 -2 2 -2s2 .62 2 2v5m0 -3h-4" /><path d="M19 10h-4l4 -7h-4" /><path d="M4 15l3 3l3 -3" /><path d="M7 6v12" /></svg> </div>
+  </div>
+
+</div>
 
 
+<div class="homMainCon">
+  @if (!products || products.length == 0) {
+    <div class="skeleton-container">
+      @for (item of skeletonItems; track $index) {
+        <div class="skeleton-card">
+          <div class="skeleton-card__image"></div>
+          <div class="skeleton-card__title"></div>
+          <div class="skeleton-card__price"></div>
+          <div class="skeleton-card__button"></div>
+        </div>
+      }
+    </div>
+  }
+
+  <div class="product-card_container">
+    @for (product of products; track $index) {
+      <div class="product-card">
+        <div class="product-card__image "  >
+          <img src="{{product.thumbnail}}"  />
+        </div>
+        <h3 class="product-card__title ">{{product.title}}</h3>
+        <p class="product-card__price ">{{product.description}}</p>
+        <button class="product-card__button ">Sepete Ekle</button>
+      </div>
+    }
+  </div>
 </div>
