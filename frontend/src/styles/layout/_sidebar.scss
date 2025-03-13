@@ -12,7 +12,7 @@
   padding:32px ;
    background-color: $black;
   position: absolute;
-  left:-250px;
+  left:-320px;
   height: 100vh;
 
   @include respond(md) {  position: fixed; width: 280px ;  left:0px;}

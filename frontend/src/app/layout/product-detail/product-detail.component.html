@@ -1,0 +1,24 @@
+<div class="proDetCon">
+
+<div class="proDetCon_imgsCon">
+
+  <div class="proDetCon_imgsCon_mainImg">
+    <img [src]="mainImg" >
+  </div>
+
+  <div class="proDetCon_imgsCon_thumbs">
+    @for (img of images ; track $index) {
+    <img [src]="img" (mouseover)="changeImg(img)">
+
+    }
+  </div>
+
+</div>
+
+
+<div class="details">
+  <h1>{{deger}}</h1><br>
+<span>{{description}}</span>
+
+<button style="width:150px;margin-top: 1rem; padding: 12px; cursor: pointer;" (click)="addProductToBasket()" >Sepete Ekle</button>
+</div>

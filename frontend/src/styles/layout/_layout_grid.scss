@@ -16,12 +16,42 @@
 
   #sidebar { grid-area: sidebar;    }
   #header { grid-area: header; }
-  #main { grid-area: main; }
+  #main { grid-area: main; padding :2rem }
   #footer { grid-area: footer; }
+
+.badge{
+  position: absolute;
+  border-radius: 50%;
+  background-color: $danger-color;
+  width:20px;
+  height: 20px;
+  padding-top: 2px;
+  top:-4px;
+  right: -8px;
+  text-align: center;
+  color: $buttons-background-color;
+  font-size: 12px;
+  font-weight: 600;
+  z-index: 1;
+}
+
+#basketList{
+  display: none;
+  position: absolute;
+  z-index: 0;
+ top:0px;
+right:0px;
+ background-color:$component-background-color;
+border-radius: 8px;
+padding:12px;
+//border: 1px solid red;
+div{display: flex; align-items: center ; gap: 12px ; font-size: 14px ; text-wrap:nowrap;}
+}
+
 
 
   @include respond(md) {
-    
+
     .layout {
       display: grid;
       grid-template-columns: 280px auto auto;

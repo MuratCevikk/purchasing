@@ -35,7 +35,8 @@
         </div>
         <h3 class="product-card__title ">{{product.title}}</h3>
         <p class="product-card__price ">{{product.description}}</p>
-        <button class="product-card__button ">Sepete Ekle</button>
+        <button class="product-card__button " (click)="addProductToBasket(product.id, product.thumbnail , product.title,1)" >Sepete Ekle</button>
+        <button class="product-card__button "  (click)="goProductDetail(product.id)" >Detay </button>
       </div>
     }
   </div>

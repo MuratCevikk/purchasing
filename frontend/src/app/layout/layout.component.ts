@@ -1,7 +1,9 @@
 
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, computed, effect, ElementRef, ViewChild } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+
+import { BasketService } from '../services/basket.service';
 
 @Component({
   selector: 'app-layout',
@@ -9,9 +11,14 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss'
 })
-export class LayoutComponent {
+export class LayoutComponent   {
 
-  constructor( private authService: AuthService, private router: Router) {
+
+  @ViewChild("basketList", {read: ElementRef}) basketList: ElementRef | undefined;
+
+prodListArray:Array<any>=[]
+
+  constructor( private authService: AuthService,  private proList : BasketService  ,  private router: Router) {
 
     this.authService.authonticatedUser(localStorage.getItem('token')).subscribe({
       next: (data) => {
@@ -22,8 +29,32 @@ export class LayoutComponent {
       }
     });
 
+
+
+effect(() => {
+  this.prodListArray = this.proList.prodList();
+});
+
+
+
   }
 
+
+
+
+  showProductList() {
+    if (this.basketList) {
+      this.basketList.nativeElement.style.display = "block"
+    }
+
+  }
+
+closeProductList() {
+    if (this.basketList) {
+      this.basketList.nativeElement.style.display = "none"
+    }
+
+  }
 
 
   logOut(){

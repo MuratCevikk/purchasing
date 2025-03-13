@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { Router } from '@angular/router';
+import { BasketService } from '../../services/basket.service';
 
 @Component({
   selector: 'app-home',
@@ -14,12 +15,23 @@ export class HomeComponent implements OnInit {
   sortby: string = "description";
   order: string = "asc";
 
-  constructor(private productsService: ProductService, private router: Router) {}
+  constructor(private productsService: ProductService, private proList : BasketService  , private router: Router) {}
 
   loadProducts(): void {
     this.productsService.getAllProducts(this.sortby, this.order, (data) => {
       this.products = data["products"];
     });
+  }
+
+
+  goProductDetail(productId: number) {
+   this.router.navigateByUrl(`/productDetail/${productId}`)
+  }
+
+  addProductToBasket(  id:number,img:string,title:string, qua:number ){
+    console.log("asdsadad"+id , img ,  title, qua)
+    this.proList.addProduct(id , img ,  title, qua)
+
   }
 
   ngOnInit(): void {

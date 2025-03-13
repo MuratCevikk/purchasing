@@ -18,6 +18,7 @@
 @use 'styles/layout/_sidebar' as *;
 
 //Pages
+@use 'styles/pages/_productDeail' as *;
 @use 'styles/pages/_home' as *;
 @use 'styles/pages/_about' as *;
 @use 'styles/pages/_login' as *;

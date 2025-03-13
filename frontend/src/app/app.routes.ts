@@ -17,6 +17,7 @@ export const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' }, // Boş path olduğunda home'a yönlendir
       { path: 'home', loadComponent: ()=>   import('./layout/home/home.component').then(m=>m.HomeComponent) },
       { path: 'about', loadComponent: ()=>   import('./layout/about/about.component').then(m=>m.AboutComponent) },
+      { path: 'productDetail/:params', loadComponent: ()=>   import('./layout/product-detail/product-detail.component').then(m=>m.ProductDetailComponent) },
 
     ]
 

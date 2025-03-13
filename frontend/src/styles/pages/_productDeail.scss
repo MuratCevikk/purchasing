@@ -1,0 +1,54 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+.proDetCon {
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
+  gap: 1rem;
+
+  div {  flex: 1  }
+
+}
+
+
+
+.proDetCon_imgsCon {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+
+}
+
+
+.proDetCon_imgsCon_mainImg {
+  border: 1px solid rgb(194, 194, 194);
+  border-radius: 8px;
+
+  img {  width: 100%  }
+
+}
+
+
+.proDetCon_imgsCon_thumbs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+
+  img {
+    cursor: pointer;
+    border: 1px solid rgb(194, 194, 194);
+    flex: 1;
+    width: 100%;
+    border-radius: 8px;
+  }
+
+}
+
+
+.details {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,14 +1,14 @@
 @use '../abstracts/_variables' as *;
 @use '../abstracts/_mixins' as *;
 
-.homMainCon{ padding: 0 12px; width:100% }
+.homMainCon{  width:100%; }
 
 
 .product-card_container{
     display: grid;
     grid-template-columns:1fr 1fr;
-    gap: 12px;
-    margin-top: 32px;
+
+
 
 }
 
@@ -33,6 +33,12 @@
 
 }
 
+
+.product-card__button{
+  margin:1rem 1rem 1rem 0px;
+  padding:4px 12px;
+  cursor: pointer;
+}
 
 
 .skeleton-container {
@@ -77,14 +83,14 @@
 }
 
 
-.sorting{ width:100%; padding:20px 2rem;
+.sorting{ width:100%; padding:0px 0px 2rem 0px;
 @include flex-end; gap:1rem;
   div{ @include flex-end;gap:1rem; cursor:pointer }
 }
 
 
 @include respond('sm'){
-  .homMainCon{ padding: 0 32px; width:100% }
+
 
   .product-card_container{
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -95,11 +101,11 @@
 
 
 @include respond('md'){
-  .homMainCon{ padding: 0 32px; width:100% }
+
 
   .product-card_container{
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 32px;
+
   }
 
 
@@ -109,11 +115,11 @@
 
 
 @include respond('lg'){
-  .homMainCon{ padding: 0 32px; width:100% }
+
 
   .product-card_container{
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 32px;
+
   }
 
 }

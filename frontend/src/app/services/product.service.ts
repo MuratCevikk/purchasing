@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
+
 import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({
@@ -23,4 +24,23 @@ export class ProductService {
       }
     });
   }
+
+
+  productDetail(par:any,callback:(res:any)=>void):void{
+
+       this.httpProductsClient.get(`${environment.baseUrl}/products/${par}`).subscribe({
+        next:(data)=>{ callback(data) },
+        error:(error)=>{console.log(error)}
+
+       })
+
+  }
+
+
+
+
+
 }
+
+
+
